@@ -1,11 +1,11 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class BulletMover<T> : MonoBehaviour where T : MonoBehaviour
+public class BulletMover : MonoBehaviour 
 {
+    [SerializeField] private float _speed;
+    
     private Rigidbody2D _rigidbody;
-
-    protected float _speed;
 
     private void Awake()
     {

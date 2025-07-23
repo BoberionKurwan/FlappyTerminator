@@ -44,7 +44,7 @@ public class EnemySpawner : Spawner<Enemy>
         SpawnPoint spawnPoint = _temporarySpawnPoints[randomIndex];
         _temporarySpawnPoints.RemoveAt(randomIndex);
 
-        Enemy enemy = _pool.Get();
+        Enemy enemy = Pool.Get();
         enemy.ReturnToPool += Release;
 
         enemy.transform.position = spawnPoint.transform.position;
@@ -53,7 +53,7 @@ public class EnemySpawner : Spawner<Enemy>
     private void Release(Enemy enemy)
     {
         enemy.ReturnToPool -= Release;
-        _pool.Release(enemy);
+        Pool.Release(enemy);
     }
 
 #if UNITY_EDITOR

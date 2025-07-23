@@ -5,13 +5,11 @@ public class BulletSpawner : Spawner<Bullet>
     [SerializeField] private SpawnPoint _spawnPoint;
     [SerializeField] private int _maxBulletCount = 3;
 
-    private Bullet bullet;
-
     public void Spawn()
     {
-        if (_pool.CountActive + 1 <= _maxBulletCount)
+        if (Pool.CountActive + 1 <= _maxBulletCount)
         {
-            bullet = _pool.Get();
+            Bullet bullet = Pool.Get();
             bullet.ReturnToPool += Release;
             bullet.transform.position = _spawnPoint.transform.position;
         }
@@ -20,6 +18,6 @@ public class BulletSpawner : Spawner<Bullet>
     private void Release(Bullet bullet)
     {
         bullet.ReturnToPool -= Release;
-        _pool.Release(bullet);
+        Pool.Release(bullet);
     }
 }

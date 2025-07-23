@@ -5,9 +5,11 @@ using System.Collections;
 public class Shooter : MonoBehaviour
 {
     [SerializeField] private SpawnPoint _spawnPoint;
+
     private BulletSpawner _bulletSpawner;
 
     private Coroutine _coroutine;
+
     private void Awake()
     {
         _bulletSpawner = GetComponent<BulletSpawner>();

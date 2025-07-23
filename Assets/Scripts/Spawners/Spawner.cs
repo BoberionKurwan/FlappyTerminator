@@ -5,21 +5,21 @@ public class Spawner<T> : MonoBehaviour where T : MonoBehaviour
 {
     [SerializeField] private T _prefab;
 
-    protected int defaultCapacity = 3;
-    protected int maxCapacity = 10;
+    protected int DefaultCapacity = 3;
+    protected int MaxCapacity = 10;
 
-    protected ObjectPool<T> _pool;
+    protected ObjectPool<T> Pool;
 
     private void Awake()
     {
-        _pool = new ObjectPool<T>(
+        Pool = new ObjectPool<T>(
             createFunc: Create,
             actionOnGet: Enable,
             actionOnRelease: Disable,
             actionOnDestroy: Destroy,
             collectionCheck: true,
-            defaultCapacity: defaultCapacity,
-            maxSize: maxCapacity);
+            defaultCapacity: DefaultCapacity,
+            maxSize: MaxCapacity);
     }
 
     private T Create()

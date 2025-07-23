@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
         _collider = GetComponent<Collider2D>();
     }
 
-    private void OnTriggerEnter2D()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         ReturnToPool?.Invoke(this);
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4606915817636705939}
   - component: {fileID: 2152884540695859193}
   - component: {fileID: 3765707557822544133}
-  - component: {fileID: 2610879790467587811}
+  - component: {fileID: 2287565740695461954}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2fae65bf176d9242b6b240406101350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2610879790467587811
+--- !u!114 &2287565740695461954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,6 +188,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2576053962470771028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f385ad56ee6a4342818631d7cbc191b, type: 3}
+  m_Script: {fileID: 11500000, guid: 567fb4a05d0f4f84a9db721d809bbadf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 8

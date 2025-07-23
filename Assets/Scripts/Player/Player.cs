@@ -1,21 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Mover), typeof(InputReader), typeof(CapsuleCollider2D))]
-[RequireComponent(typeof(BulletSpawner))]
+[RequireComponent(typeof(Mover), typeof(InputReader), typeof(BulletSpawner))]
 public class Player : MonoBehaviour
 {
     private Mover _mover;
     private InputReader _inputReader;
     private BulletSpawner _bulletSpawner;
-    private CapsuleCollider2D _capsuleCollider;
 
     private void Awake()
     {
         _mover = GetComponent<Mover>();
         _inputReader = GetComponent<InputReader>();
         _bulletSpawner = GetComponent<BulletSpawner>();
-        _capsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     private void FixedUpdate()
@@ -27,11 +24,11 @@ public class Player : MonoBehaviour
             _bulletSpawner.Spawn();
     }
 
-    private void OnTriggerEnter2D()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         ReloadScene();
     }
-
+ 
     private void ReloadScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
